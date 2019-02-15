@@ -1,0 +1,21 @@
+{
+    "Arguments": [],
+    "Command": "getVersions",
+    "Data": [
+        {
+            "VersionName": "NEO",
+            "Versionid": 1
+        },
+        {
+            "VersionName": "CEO",
+            "Versionid": 2
+        }
+    ],
+    "DataCount": 2,
+    "Message": "Successful",
+    "ResponseDateTime": "2018-10-04T07:33:50.843Z",
+    "Source": "Yellow Pages",
+    "Status": 0,
+    "YPDataServiceVersion": "v1",
+    "YPDatabaseVersion": "2.0V4"
+}

@@ -1,0 +1,25 @@
+{
+    "Arguments": [],
+    "Command": "getAPUs",
+    "Data": [
+        {
+            "APUName": "Honeywell_131_9",
+            "APUid": 1
+        },
+        {
+            "APUName": "PW_APS_3200",
+            "APUid": 2
+        },
+        {
+            "APUName": "PW_APS36_300",
+            "APUid": 3
+        }
+    ],
+    "DataCount": 3,
+    "Message": "Successful",
+    "ResponseDateTime": "2018-10-04T07:38:35.293Z",
+    "Source": "Yellow Pages",
+    "Status": 0,
+    "YPDataServiceVersion": "v1",
+    "YPDatabaseVersion": "2.0V4"
+}

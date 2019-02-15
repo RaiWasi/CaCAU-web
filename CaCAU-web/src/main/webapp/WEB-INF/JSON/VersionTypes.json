@@ -1,0 +1,15 @@
+{
+  "Data": [
+    "CEO",
+    "NEO"
+  ],
+  "Status": 0,
+  "Message": "Successful",
+  "YPDatabaseVersion": "DB2 V7",
+  "YPDataServiceVersion": "v1",
+  "ResponseDateTime": "2018-12-11T09:42:28.521Z",
+  "Command": "http://de0-vsiaas-1344.eu-v.airbus-v.corp:80/cacausrv/api/v1/CACAU/VersionTypes",
+  "Source": "Yellow Pages",
+  "DataCount": 2,
+  "Arguments": {}
+}

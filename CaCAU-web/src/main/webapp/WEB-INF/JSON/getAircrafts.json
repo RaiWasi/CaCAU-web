@@ -1,0 +1,21 @@
+{
+    "Arguments": [],
+    "Command": "getAircrafts",
+    "Data": [
+        {
+            "AircraftName": "A320CEO",
+            "Aircraftid": 1
+        },
+        {
+            "AircraftName": "A320NEO",
+            "Aircraftid": 2
+        }
+    ],
+    "DataCount": 5,
+    "Message": "Successful",
+    "ResponseDateTime": "2018-11-16T08:24:44.073Z",
+    "Source": "Yellow Pages",
+    "Status": 0,
+    "YPDataServiceVersion": "v1",
+    "YPDatabaseVersion": "2.0V4"
+}

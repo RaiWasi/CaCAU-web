@@ -1,0 +1,63 @@
+{
+  "Data": [
+    {
+      "BatchNumber": "013",
+      "BatchId": 5,
+      "BatchOpenDateTime": "2018-09-03T13:48:10.263",
+      "BatchReOpenDateTime": "2018-09-15T07:19:19.663",
+      "BatchCloseDateTime": "2018-10-08T05:40:30.757",
+      "BatchFrozenDateTime": "2018-10-08T05:40:30.757",
+      "BatchStatus": "FROZEN",
+      "NewBatchNumber": null
+    },
+    {
+      "BatchNumber": "017",
+      "BatchId": 8,
+      "BatchOpenDateTime": "2018-10-15T11:32:19.653",
+      "BatchReOpenDateTime": null,
+      "BatchCloseDateTime": "2018-10-15T11:33:07.003",
+      "BatchFrozenDateTime": "2018-10-15T11:33:26.59",
+      "BatchStatus": "FROZEN",
+      "NewBatchNumber": null
+    },
+    {
+      "BatchNumber": "015",
+      "BatchId": 9,
+      "BatchOpenDateTime": "2018-10-15T11:33:47.33",
+      "BatchReOpenDateTime": "2018-10-15T11:37:54.08",
+      "BatchCloseDateTime": "2018-10-26T10:08:39.177",
+      "BatchFrozenDateTime": "2018-10-26T10:08:59.517",
+      "BatchStatus": "FROZEN",
+      "NewBatchNumber": null
+    },
+    {
+      "BatchNumber": "016",
+      "BatchId": 10,
+      "BatchOpenDateTime": "2018-10-26T10:09:17.663",
+      "BatchReOpenDateTime": "2018-12-04T10:38:23.03",
+      "BatchCloseDateTime": "2018-11-23T06:47:51.487",
+      "BatchFrozenDateTime": null,
+      "BatchStatus": "RE_OPEN",
+      "NewBatchNumber": null
+    },
+    {
+      "BatchNumber": "014",
+      "BatchId": 7,
+      "BatchOpenDateTime": "2018-10-15T10:48:30.213",
+      "BatchReOpenDateTime": "2018-10-15T11:31:25.27",
+      "BatchCloseDateTime": "2018-10-15T11:31:28.48",
+      "BatchFrozenDateTime": "2018-10-15T11:32:11.38",
+      "BatchStatus": "FROZEN",
+      "NewBatchNumber": null
+    }
+  ],
+  "Status": 0,
+  "Message": "Successful",
+  "YPDatabaseVersion": "DB2 V7",
+  "YPDataServiceVersion": "v1",
+  "ResponseDateTime": "2018-12-11T09:40:10.795Z",
+  "Command": "http://de0-vsiaas-1344.eu-v.airbus-v.corp:80/cacausrv/api/v1/CACAU/Batches",
+  "Source": "Yellow Pages",
+  "DataCount": 5,
+  "Arguments": {}
+}

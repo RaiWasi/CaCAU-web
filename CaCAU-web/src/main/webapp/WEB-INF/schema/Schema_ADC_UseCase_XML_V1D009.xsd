@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 sp2 (http://www.altova.com) by Airbus (Airbus Operations GmbH) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xs:element name="USECASE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="HEADER" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="CONFIGURATION" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HEADER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AUTHOR" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="REFERENCE" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="RELEASE" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="HLDOCUMENT" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CONFIGURATION">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CONTENT" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="EXPLORATION" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="DUMMY" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="YPBATCH" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="APPLICABILITY">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PROGRAM" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="AIRLINE" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="EQUIPMENT" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PROGRAM">
+		<xs:complexType>
+			<xs:attribute ref="actype" use="required"/>
+			<xs:attribute ref="enginesupplier" use="required"/>
+			<xs:attribute ref="enginetype" use="required"/>
+			<xs:attribute ref="aputype" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AIRLINE">
+		<xs:complexType>
+			<xs:attribute ref="icaoCode" use="required"/>
+			<xs:attribute ref="tailnumber" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EQUIPMENT">
+		<xs:complexType>
+			<xs:attribute name="fin" use="required"/>
+			<xs:attribute name="fd" use="optional"/>
+			<xs:attribute name="name" use="optional"/>
+			<xs:attribute name="swpn" use="required"/>
+			<xs:attribute name="hwpn" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AUTHOR">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="department" type="xs:string" use="required"/>
+			<xs:attribute name="function" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="REFERENCE">
+		<xs:complexType>
+			<xs:attribute name="title" type="xs:string" use="required"/>
+			<xs:attribute name="number" type="xs:string" use="required"/>
+			<xs:attribute name="issue" type="xs:string" use="required"/>
+			<xs:attribute name="usecasenumber" use="required"/>
+			<xs:attribute name="servicetype" use="required"/>
+			<!--	<xs:attribute name="servicenumber" use="required"/> -->
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RELEASE">
+		<xs:complexType>
+			<xs:attribute name="version" type="xs:string" use="required"/>
+			<xs:attribute name="date" type="xs:date" use="required"/>
+			<xs:attribute name="description" type="xs:string" use="required"/>
+			<xs:attribute name="status" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Final"/>
+						<xs:enumeration value="Draft"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HLDOCUMENT">
+		<xs:complexType>
+			<xs:attribute name="title" type="xs:string" use="required"/>
+			<xs:attribute name="reference" type="xs:string" use="required"/>
+			<xs:attribute name="issue" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CONTENT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="APPLICABILITY" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="EMITTER" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="contentid" use="required"/>
+			<xs:attribute ref="title" use="optional"/>
+			<!--<xs:attribute ref="type" use="required"/>-->
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="YPBATCH">
+		<xs:complexType>
+			<xs:attribute ref="batchnumber" use="required"/>
+			<xs:attribute ref="date" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EMITTER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PARAMETER" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="emitterid" use="required"/>
+			<xs:attribute ref="equipmentCode" use="required"/>
+			<xs:attribute ref="emitterName" use="required"/>
+			<xs:attribute ref="side" use="required"/>
+			<xs:attribute ref="busfunction" use="optional"/>
+			<xs:attribute ref="inlay" use="optional"/>
+			<xs:attribute ref="hiPinNumber" use="optional"/>
+			<xs:attribute ref="hiPinChar" use="optional"/>
+			<!--<xs:attribute ref="portchannelnumber" use="optional"/>-->
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EXPLORATION">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="EMITTER" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DUMMY">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="EMITTER" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PARAMETER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LABEL" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="parameterId" use="required"/>
+			<xs:attribute ref="ypparameterId" use="required"/>
+			<xs:attribute ref="parameterName" use="required"/>
+			<xs:attribute ref="description" use="required"/>
+			<xs:attribute ref="minSamplingFreq" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LABEL">
+		<xs:complexType>
+			<xs:attribute ref="labelId" use="required"/>
+			<xs:attribute ref="numberOctal" use="required"/>
+			<xs:attribute ref="order" use="optional"/>
+			<xs:attribute ref="sdi" use="optional"/>
+			<xs:attribute ref="msb" use="optional"/>
+			<xs:attribute ref="len" use="optional"/>
+			<xs:attribute ref="signed" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="actype">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="10"/>
+			</xs:restriction>
+			<!--
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ALL"/>
+				<xs:enumeration value="SA"/>
+				<xs:enumeration value="LR"/>
+				<xs:enumeration value="A318"/>
+				<xs:enumeration value="A319"/>
+				<xs:enumeration value="A320"/>
+				<xs:enumeration value="A321"/>
+				<xs:enumeration value="A330"/>
+			</xs:restriction>-->
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="aputype">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="20"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="enginetype">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="10"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="batchnumber">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:maxInclusive value="999"/>
+				<xs:minInclusive value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="date">
+		<xs:simpleType>
+			<xs:restriction base="xs:date"/>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="enginesupplier">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="10"/>
+			</xs:restriction>
+			<!--
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ALL"/>
+				<xs:enumeration value="CEO-CFM"/>
+				<xs:enumeration value="CEO-IAE"/>
+				<xs:enumeration value="CEO-PW"/>
+				<xs:enumeration value="NEO-CFM"/>
+				<xs:enumeration value="NEO-PW"/>
+				<xs:enumeration value="CEO-GE"/>
+				<xs:enumeration value="CEO-RR"/>
+				<xs:enumeration value="NEO-RR"/>
+			</xs:restriction>-->
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="icaoCode">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="tailnumber">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="6"/>
+				<xs:pattern value="[A-Z]{1}-[0-9]{4}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="contentid">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:maxInclusive value="999"/>
+				<xs:minInclusive value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="title">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="type">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ZAOG-SPM"/>
+				<xs:enumeration value="ZAOG-PRM"/>
+				<xs:enumeration value="ZAOG-AirTHM"/>
+				<xs:enumeration value="ZAOG-OTHER"/>
+				<xs:enumeration value="ACMS-Rep"/>
+				<xs:enumeration value="ACMS-SAR"/>
+				<xs:enumeration value="ACMS-ACU"/>
+				<xs:enumeration value="Support-MISP"/>
+				<xs:enumeration value="Support-OTHER"/>
+				<xs:enumeration value="System-ATAXX"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="emitterid">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:maxInclusive value="999"/>
+				<xs:minInclusive value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="equipmentCode">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="emitterName">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="side">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:maxInclusive value="8"/>
+				<xs:minInclusive value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="busfunction">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="inlay">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="TP"/>
+				<xs:enumeration value="MP"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="hiPinNumber">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="1"/>
+				<xs:maxInclusive value="15"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="hiPinChar">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="1"/>
+				<xs:pattern value="[A-HJ-K]{1}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="parameterId">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:maxInclusive value="999"/>
+				<xs:minInclusive value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="ypparameterId">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="26"/>
+				<!--<xs:pattern value="([0-9A-F][0-9A-F][0-9A-F])\.([0-9])\.([A-Z][A-Z])\.([0-9][0-9])\.([A-Z])\.([0-9][0-9][0-9])\.([0-9X][0-9X])\.([0-9][0-9])\.([0-9][0-9])"/>-->
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="parameterName">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="description">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="minSamplingFreq">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:maxInclusive value="999"/>
+				<xs:minInclusive value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+		<!--
+		<xs:simpleType>
+			<xs:restriction base="xs:int">
+				<xs:enumeration value="0"/>
+				<xs:enumeration value="1"/>
+				<xs:enumeration value="2"/>
+				<xs:enumeration value="4"/>
+				<xs:enumeration value="8"/>
+				<xs:enumeration value="16"/>
+				<xs:enumeration value="32"/>
+				<xs:enumeration value="64"/>
+			</xs:restriction>
+		</xs:simpleType>-->
+	</xs:attribute>
+	<xs:attribute name="labelId">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:maxInclusive value="999"/>
+				<xs:minInclusive value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="numberOctal">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="3"/>
+				<xs:pattern value="[0-3][0-7][0-7]"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="order">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:maxInclusive value="999"/>
+				<xs:minInclusive value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="sdi">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="00"/>
+				<xs:enumeration value="01"/>
+				<xs:enumeration value="10"/>
+				<xs:enumeration value="11"/>
+				<xs:enumeration value="DD"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="msb">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="0"/>
+				<xs:maxInclusive value="30"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="len">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="0"/>
+				<xs:maxInclusive value="30"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="signed">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Yes"/>
+				<xs:enumeration value="No"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+</xs:schema>

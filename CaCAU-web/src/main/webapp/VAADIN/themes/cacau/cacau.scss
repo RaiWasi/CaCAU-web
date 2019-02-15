@@ -1,0 +1,88 @@
+@import "../valo/valo.scss";
+
+
+@mixin cacau {
+  @include valo;
+
+	.cacaupanel .v-panel-content {
+	   background-color:rgb(230, 249, 255);
+	}
+	
+	.cacauMenu .v-panel-content {
+	   background-color:rgb(230, 249, 255);
+	}
+	
+	
+	.cacauProjectMain .v-panel-content {
+	   background-color:rgb(230, 249, 255);
+	}
+
+	.v-table {
+		background: rgb(204, 255, 153);
+	}
+	
+	.v-table-caption-container{
+		padding: 7px 8px 8px;
+	}
+	
+
+	
+	.v-table-header {
+		height: 25px;
+		color: #fff;
+		background: rgb(0, 98, 128);
+		font-weight: bold;
+		text-align: center;
+	}
+	.v-table-rowheight .v-table-cell-content {
+		height: 19px;
+		font-size: 13px;
+		font-weight:500;
+	}
+	
+	.v-label.apptitle { 
+		font-size: 23px;
+		font-weight: bold;
+		color: rgb(0, 51, 153);
+	}
+	
+	.v-button{
+	    font-weight: bold;
+	    font-size: 13px;
+	    color: black;
+	    width: 147px;
+	    height: 32px;
+	    border-color: rgb(213,213,213);
+	}
+	
+	.v-button-buttonNormale {
+	    font-weight: bold;
+	    font-size: 14px;
+	    color: black;
+	    width: 147px;
+	    height: 33px;
+	    border-color: rgb(213,213,213);
+	}
+	
+	.v-button-buttonSelected {
+		font-weight: bold;
+		font-size: 14px;
+	    color: red;
+	    width: 147px;
+	    height: 33px;
+	}
+	
+	.v-button-buttonSearch {
+		font-weight: bold;
+	    border: 1px solid rgb(0, 204, 0);
+	}
+	
+	.errorLabel {
+	    margin: 6px;
+	    padding: 1px;
+	    background: red;
+	    color: red;
+	    font-size: 13px;
+	    font-weight: bold;
+	}
+}

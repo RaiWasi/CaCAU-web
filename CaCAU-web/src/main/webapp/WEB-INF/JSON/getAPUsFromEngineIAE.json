@@ -1,0 +1,26 @@
+{
+    "Arguments": [
+        {
+            "Key": "Argument 1",
+            "Value": "IAE"
+        }
+    ],
+    "Command": "getAPUsFromEngine",
+    "Data": [
+        {
+            "APUName": "Honeywell_131_9",
+            "APUid": 1
+        },
+        {
+            "APUName": "PW_APS_3200",
+            "APUid": 2
+        }
+    ],
+    "DataCount": 2,
+    "Message": "Successful",
+    "ResponseDateTime": "2018-11-19T11:36:57.835Z",
+    "Source": "Yellow Pages",
+    "Status": 0,
+    "YPDataServiceVersion": "v1",
+    "YPDatabaseVersion": "2.0V4"
+}

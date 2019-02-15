@@ -1,0 +1,34 @@
+{
+	"Arguments": [
+		{
+			"Key": "Argument 1",
+			"Value": "A320"
+		}
+	],
+	"Command": "getEnginesFromAircraft",
+	"Data": [
+		{
+			"EngineName": "CFM",
+			"Engineid": 1
+		},
+		{
+			"EngineName": "PW",
+			"Engineid": 2
+		},
+		{
+			"EngineName": "IAE",
+			"Engineid": 3
+		},
+		{
+            "EngineName": "RR",
+            "Engineid": 4
+        }
+	],
+	"DataCount": 4,
+	"Message": "Successful",
+	"ResponseDateTime": "2018-10-04T07:54:11.272Z",
+	"Source": "Yellow Pages",
+	"Status": 0,
+	"YPDataServiceVersion": "v1",
+	"YPDatabaseVersion": "2.0V4"
+}

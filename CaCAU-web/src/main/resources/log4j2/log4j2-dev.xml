@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration-Log4j2-Development-Environment>
+
+<Configuration status="WARN" monitorInterval="30">
+
+	<Properties>
+		<Property name="lOG_PATH">C:/Users/Public/log/cacau/dev</Property>
+		<Property name="LOG_PATTERN"> %d{yyyy-MM-dd HH:mm:ss.SSS} - %p - %c - %m%n</Property>
+	</Properties>
+
+	<Appenders>
+
+		<Console name="Console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+
+		<RollingFile name="debugLog"
+			fileName="${lOG_PATH}/cacau-application-debug-dev.log"
+			filePattern="${lOG_PATH}/cacau-application-debug-dev-%d{yyyy-MM-dd}-%i.log">
+
+			<filter class="org.apache.log4j.varia.LevelRangeFilter">
+				<param name="LevelMin" value="INFO" />
+				<param name="LevelMax" value="FATAL" />
+			</filter>
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="2500KB" />
+			</Policies>
+			<Delete basePath="${lOG_PATH}" maxDepth="3">
+				<IfFileName glob="*/cacau-application-debug-dev-*.log" />
+				<IfLastModified age="7d" />
+			</Delete>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+
+		<RollingFile name="infoLog"
+			fileName="${lOG_PATH}/cacau-application-info-dev.log"
+			filePattern="${lOG_PATH}/cacau-application-info-dev-%d{yyyy-MM-dd}-%i.log">
+
+			<!-- Matches only INFO level -->
+			<LevelRangeFilter minLevel="INFO" maxLevel="INFO"
+				onMatch="ACCEPT" onMismatch="DENY" />
+
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="2500KB" />
+			</Policies>
+			<Delete basePath="${lOG_PATH}" maxDepth="3">
+				<IfFileName glob="*/cacau-application-info-dev-*.log" />
+				<IfLastModified age="7d" />
+			</Delete>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+
+		<RollingFile name="errorLog"
+			fileName="${lOG_PATH}/cacau-application-error-dev.log"
+			filePattern="${lOG_PATH}/cacau-application-error-dev-%d{yyyy-MM-dd}-%i.log">
+
+			<!-- Matches only ERROR level -->
+			<LevelRangeFilter minLevel="ERROR" maxLevel="ERROR"
+				onMatch="ACCEPT" onMismatch="DENY" />
+
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="2500KB" />
+			</Policies>
+			<Delete basePath="${lOG_PATH}" maxDepth="3">
+				<IfFileName glob="*/cacau-application-error-dev-*.log" />
+				<IfLastModified age="21d" />
+			</Delete>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+
+	</Appenders>
+
+	<Loggers>
+
+		<Logger name="com.airbus.alten.cacau" additivity="false">
+			<AppenderRef ref="debugLog" />
+			<AppenderRef ref="infoLog" />
+			<AppenderRef ref="errorLog" />
+			<AppenderRef ref="Console" />
+		</Logger>
+
+		<Root level="all">
+			<AppenderRef ref="Console" />
+		</Root>
+
+	</Loggers>
+
+</Configuration>

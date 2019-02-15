@@ -1,0 +1,19 @@
+{
+  "Data": [
+    "A320",
+    "A330",
+    "A340",
+    "A350",
+    "A380",
+    "A321"
+  ],
+  "Status": 0,
+  "Message": "Successful",
+  "YPDatabaseVersion": "DB2 V7",
+  "YPDataServiceVersion": "v1",
+  "ResponseDateTime": "2018-12-11T09:41:27.878Z",
+  "Command": "http://de0-vsiaas-1344.eu-v.airbus-v.corp:80/cacausrv/api/v1/CACAU/ModelTypes",
+  "Source": "Yellow Pages",
+  "DataCount": 6,
+  "Arguments": {}
+}

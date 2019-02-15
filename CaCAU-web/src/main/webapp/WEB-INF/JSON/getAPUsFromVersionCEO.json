@@ -1,0 +1,26 @@
+{
+	"Arguments": [
+		{
+			"Key": "Argument 1",
+			"Value": "CEO"
+		}
+	],
+	"Command": "getAPUsFromAircraft",
+	"Data": [
+		{
+			"APUName": "Honeywell_131_9 ",
+			"APUid": 1
+		},
+		{
+            "APUName": "PW_APS36_300 CEO",
+            "APUid": 3
+        }
+	],
+	"DataCount": 2,
+	"Message": "Successful",
+	"ResponseDateTime": "2018-10-18T11:34:34.490Z",
+	"Source": "Yellow Pages",
+	"Status": 0,
+	"YPDataServiceVersion": "v1",
+	"YPDatabaseVersion": "2.0V4"
+}
